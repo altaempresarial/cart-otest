@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumière Joaillerie | Cartão Digital</title>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Montserrat', 'sans-serif'],
+            },
+            colors: {
+              gold: {
+                400: '#E5C158',
+                500: '#D4AF37', // Standard Gold
+                600: '#B5952F',
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 1s ease-out forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      body {
+        background-color: #000;
+        font-family: 'Montserrat', sans-serif;
+      }
+      /* Custom scrollbar for webkit */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1a1a; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D4AF37; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #B5952F; 
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.1/",
+    "react/": "https://esm.sh/react@^19.2.1/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.559.0"
+  }
+}
+</script>
+</head>
+<body class="text-white selection:bg-gold-500 selection:text-black overflow-x-hidden">
+
+    <!-- 1. Background Layer (Dark Dramatic Jewelry) -->
+    <div 
+        class="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style="background-image: url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=2574&auto=format&fit=crop');"
+    ></div>
+    
+    <!-- 2. Overlay Layer -->
+    <div class="fixed inset-0 z-0 bg-black/60 backdrop-blur-[1px]"></div>
+
+    <!-- 3. Main Content -->
+    <main class="relative z-10 flex min-h-screen items-center justify-center p-4 py-12">
+        
+        <!-- Glassmorphism Card -->
+        <div id="glass-card" class="
+            w-full max-w-md 
+            rounded-[2.5rem] 
+            border border-white/10 
+            bg-white/5
+            backdrop-blur-xl 
+            shadow-2xl shadow-black/50
+            p-6 sm:p-8
+            opacity-0 translate-y-10
+            transition-all duration-1000 ease-out
+        ">
+          
+            <!-- Header Section -->
+            <header class="flex flex-col items-center text-center mb-8">
+                <!-- Logo Area -->
+                <div class="mb-6 flex items-center justify-center space-x-3 text-gold-500 animate-[fadeIn_1s_ease-out_forwards]">
+                    <i class="fa-solid fa-gem text-xl"></i>
+                    <span class="text-sm tracking-[0.3em] font-semibold uppercase text-white/90">
+                        Lumière Joaillerie
+                    </span>
+                    <i class="fa-solid fa-gem text-xl"></i>
+                </div>
+
+                <!-- Profile Image -->
+                <div class="relative mb-4 group cursor-pointer">
+                    <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-gold-400 to-yellow-200 opacity-75 blur transition duration-500 group-hover:opacity-100"></div>
+                    <img 
+                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop" 
+                        alt="Isabella Montclair"
+                        class="relative h-28 w-28 rounded-full border-2 border-gold-500 object-cover shadow-lg transition-transform duration-300 group-hover:scale-105"
+                    />
+                </div>
+
+                <!-- Name & Title -->
+                <h1 class="text-2xl font-bold text-white mb-1">
+                    Isabella Montclair
+                </h1>
+                <p class="text-gold-400 text-sm font-medium uppercase tracking-wider mb-4">
+                    Consultora de Alta Joalheria
+                </p>
+
+                <!-- Bio -->
+                <p class="text-gray-200 font-light text-sm leading-relaxed max-w-xs mx-auto">
+                    Elegância que transforma momentos em eternidade. Curadoria exclusiva de diamantes e ouro 18k.
+                </p>
+            </header>
+
+            <!-- Action Grid -->
+            <section class="grid grid-cols-2 gap-4 mb-8">
+                <!-- WhatsApp -->
+                <a href="#" class="group flex flex-col items-center justify-center gap-2 rounded-2xl bg-black/30 p-4 border border-white/5 transition-all duration-300 hover:bg-gold-500 hover:text-black hover:scale-[1.02] hover:border-gold-400 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+                    <div class="text-gold-500 transition-colors duration-300 group-hover:text-black">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                    </div>
+                    <span class="text-xs font-semibold tracking-wide">WhatsApp</span>
+                </a>
+
+                <!-- Localização -->
+                <a href="#" class="group flex flex-col items-center justify-center gap-2 rounded-2xl bg-black/30 p-4 border border-white/5 transition-all duration-300 hover:bg-gold-500 hover:text-black hover:scale-[1.02] hover:border-gold-400 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+                    <div class="text-gold-500 transition-colors duration-300 group-hover:text-black">
+                        <i class="fa-solid fa-location-dot text-xl"></i>
+                    </div>
+                    <span class="text-xs font-semibold tracking-wide">Localização</span>
+                </a>
+
+                <!-- E-mail -->
+                <a href="mailto:contato@lumiere.com" class="group flex flex-col items-center justify-center gap-2 rounded-2xl bg-black/30 p-4 border border-white/5 transition-all duration-300 hover:bg-gold-500 hover:text-black hover:scale-[1.02] hover:border-gold-400 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+                    <div class="text-gold-500 transition-colors duration-300 group-hover:text-black">
+                        <i class="fa-regular fa-envelope text-xl"></i>
+                    </div>
+                    <span class="text-xs font-semibold tracking-wide">E-mail</span>
+                </a>
+
+                <!-- Site Oficial -->
+                <a href="#" class="group flex flex-col items-center justify-center gap-2 rounded-2xl bg-black/30 p-4 border border-white/5 transition-all duration-300 hover:bg-gold-500 hover:text-black hover:scale-[1.02] hover:border-gold-400 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+                    <div class="text-gold-500 transition-colors duration-300 group-hover:text-black">
+                        <i class="fa-solid fa-globe text-xl"></i>
+                    </div>
+                    <span class="text-xs font-semibold tracking-wide">Site Oficial</span>
+                </a>
+            </section>
+
+            <!-- Main CTA -->
+            <div class="mb-10">
+                <button class="relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-gold-600 via-gold-500 to-gold-400 p-[1px] shadow-lg transition-transform duration-300 active:scale-95 hover:shadow-gold-500/30">
+                    <div class="relative flex items-center justify-center gap-2 rounded-xl bg-black/20 px-8 py-4 text-white font-bold tracking-widest uppercase text-sm backdrop-blur-sm hover:bg-transparent hover:text-black transition-colors duration-300 cursor-pointer">
+                        Ver Catálogo Exclusivo
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Featured Product Section (Gold Jewelry) -->
+            <section class="relative mb-8 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-gold-400 text-xs font-bold uppercase tracking-widest">
+                        Destaque do Mês
+                    </h3>
+                    <span class="bg-gold-500/20 text-gold-400 text-[10px] px-2 py-1 rounded-full border border-gold-500/30">
+                        Premium
+                    </span>
+                </div>
+                
+                <div class="group relative w-full h-48 overflow-hidden rounded-lg mb-3">
+                    <img 
+                        src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1000&auto=format&fit=crop" 
+                        alt="Coleção Gold Royal 18k"
+                        class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 pointer-events-none"></div>
+                    
+                    <div class="absolute bottom-3 left-3 pointer-events-none">
+                        <p class="text-white font-serif text-lg">Coleção Gold Royal 18k</p>
+                        <p class="text-gray-300 text-xs font-light">A exuberância do ouro puro com design atemporal.</p>
+                    </div>
+                </div>
+
+                <button class="w-full py-2 flex items-center justify-center gap-2 text-xs text-white/80 hover:text-gold-400 transition-colors">
+                    Ver Detalhes <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </button>
+            </section>
+
+            <!-- Footer -->
+            <footer class="flex flex-col items-center gap-4 pt-4 border-t border-white/10">
+                <!-- Social Icons -->
+                <div class="flex gap-6">
+                    <a href="#" class="text-white/60 hover:text-gold-500 hover:scale-110 transition-all duration-300">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white/60 hover:text-gold-500 hover:scale-110 transition-all duration-300">
+                        <i class="fa-brands fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white/60 hover:text-gold-500 hover:scale-110 transition-all duration-300">
+                        <i class="fa-brands fa-tiktok text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white/60 hover:text-gold-500 hover:scale-110 transition-all duration-300">
+                        <i class="fa-brands fa-linkedin-in text-xl"></i>
+                    </a>
+                </div>
+                
+                <div class="text-center">
+                    <p class="text-[10px] text-white/40 font-light tracking-wide">
+                        © 2024 Lumière Joaillerie.
+                    </p>
+                    <p class="text-[10px] text-white/40 font-light tracking-wide mt-1">
+                        Todos os direitos reservados.
+                    </p>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const card = document.getElementById('glass-card');
+            // Small delay to ensure smooth transition after paint
+            setTimeout(() => {
+                card.classList.remove('opacity-0', 'translate-y-10');
+                card.classList.add('opacity-100', 'translate-y-0');
+            }, 100);
+        });
+    </script>
+</body>
+</html>
